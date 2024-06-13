@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  smart land</title>
+    <link rel="stylesheet" href="smart_land.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- زر العودة للأعلى -->
+    <button id="toTopBtn" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- قسم العنوان الرئيسي -->
+    <header>
+        <div class="overlay">
+            <div class="container">
+                <h1>شركة عقارات مميزة</h1>
+                <p>نساعدك في العثور على المنزل المثالي</p>
+                <a href="#contact" class="btn">تواصل معنا</a>
+            </div>
+        </div>
+        <video src="down-arrow.mp4" autoplay loop class="arrow_down"></video>
+    </header>
+
+    <!-- قسم عن الشركة -->
+    <section id="about">
+        <div class="container">
+            <h2>عن الشركة</h2>
+            <p>نحن شركة رائدة في مجال العقارات، نقدم أفضل الخدمات لمساعدتك في العثور على المنزل المثالي. لدينا فريق متخصص يسعى لتلبية احتياجاتك بكل احترافية.</p>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section id="services">
+        <div class="container">
+            <h2>خدماتنا</h2>
+            <div class="services">
+                <div class="service-item">
+                    <i class="fas fa-home"></i>
+                    <h3>بيع العقارات</h3>
+                    <p>نساعدك في بيع عقارك بأفضل سعر ممكن وبأسرع وقت.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-search-location"></i>
+                    <h3>شراء العقارات</h3>
+                    <p>نساعدك في العثور على المنزل المثالي الذي يناسب احتياجاتك وميزانيتك.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-building"></i>
+                    <h3>تأجير العقارات</h3>
+                    <p>نساعدك في إيجاد العقار المناسب للتأجير سواء كنت تبحث عن شقة أو منزل.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم العقارات المتاحة -->
+    <section id="properties">
+        <div class="container">
+            <h2>العقارات المتاحة</h2>
+            <div class="properties">
+                <div class="property-item">
+                    <img src="smart land img 1.jpeg" alt="عقار 1">
+                    <h3>عقار فاخر في المدينة</h3>
+                    <p>سعر: 2,000,000 جنيه</p>
+                </div>
+                <div class="property-item">
+                    <img src="smart land img 2.jpeg" alt="عقار 2">
+                    <h3>شقة حديثة في الحي الراقي</h3>
+                    <p>سعر: 1,500,000 جنيه</p>
+                </div>
+                <div class="property-item">
+                    <img src="smart land img 1.jpeg" alt="عقار 3">
+                    <h3>منزل عائلي في ضاحية هادئة</h3>
+                    <p>سعر: 1,200,000 جنيه</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الشهادات -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>شهادات عملائنا</h2>
+            <div class="testimonials">
+                <div class="testimonial-item">
+                    <p>"تجربة رائعة مع هذه الشركة. ساعدوني في العثور على المنزل المثالي لعائلتي."</p>
+                    <h4>- أحمد محمد</h4>
+                </div>
+                <div class="testimonial-item">
+                    <p>"خدمة ممتازة واحترافية. أوصي بشدة."</p>
+                    <h4>- ليلى خالد</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل -->
+    <section id="contact">
+        <div class="container">
+            <h2>تواصل معنا</h2>
+            <p>تابعونا على وسائل التواصل الاجتماعي:</p>
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="https://whatsapp.com" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://snapchat.com" target="_blank" class="social-icon"><i class="fab fa-snapchat-ghost"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- جافا سكريبت -->
+    <script>
+        // الحصول على الزر
+        var toTopBtn = document.getElementById("toTopBtn");
+
+        // عندما يقوم المستخدم بالتمرير في الصفحة، استدعي دالة scrollFunction
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                toTopBtn.style.display = "block"; // عرض الزر
+            } else {
+                toTopBtn.style.display = "none"; // إخفاء الزر
+            }
+        }
+
+        // عند النقر على الزر، انتقل إلى أعلى الصفحة
+        function scrollToTop() {
+            document.body.scrollTop = 0; // لنظام التشغيل Safari
+            document.documentElement.scrollTop = 0; // لباقي المتصفحات
+        }
+    </script>
+</body>
+</html>

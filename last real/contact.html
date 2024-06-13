@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: white;
+            min-height: 100vh;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .navbar {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.5em;
+            color: rgb(17, 3, 3);
+            text-align: left;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .content {
+            max-width: 90%;
+            width: 500px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            min-width: 100px;
+        }
+        .mail-button {
+            background-color: #1747bd;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+        .whatsapp-button {
+            background-color: #25D366; /* تغيير لون زر الواتساب */
+            color: white;
+        }
+        .mail-button:hover {
+            background-color: #1747bd;
+            letter-spacing: 1px;
+            box-shadow: 1px 1px 1px 1px #009688;
+        }
+        .whatsapp-button:hover {
+            background-color: #128C7E; /* لون هوفر لزر الواتساب */
+        }
+        .contact-logo {
+            border-radius: 10px;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 1.5em;
+        }
+        .social-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .social-section h2 {
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Additional styles for animation */
+        .input-container {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease; /* تغييرات هنا */
+            display: none; /* تغييرات هنا */
+            visibility: hidden; /* تغييرات هنا */
+        }
+
+        .input-container.active {
+            opacity: 1;
+            transform: translateY(0);
+            display: block; /* تغييرات هنا */
+            visibility: visible; /* تغييرات هنا */
+        }
+
+        /* Style for input fields */
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #009688;
+            outline: none;
+        }
+        .send_btn{
+            padding: 10px;
+            border: none;
+            outline: none;
+            /* font-size: larger; */
+            border-radius: 4px;
+            width: 300px;
+            margin: 10px;
+            transition: 0.4s  ;
+        }
+        .send_btn:hover{
+            background: #05466f;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html"><h1>Enserv</h1></a>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="logo">
+                <img src="contact photo.jpg" class="contact-logo" alt="logo" width="100">
+            </div>
+            <h1>Contact us</h1>
+            <p>Reach out to us, we're always available to assist you</p>
+            <div class="button-container">
+                <button onclick="toggleInputs()" class="button mail-button" id="mail_btn">Mail</button> <!-- تعديل هنا -->
+                <a href="https://wa.me/01155143217" class="button whatsapp-button">Whatsapp</a>
+                <!-- Hidden input fields -->
+                <div class="input-container" id="inputFields">
+                    <input type="email" placeholder="Your Email">
+                    <textarea placeholder="Your Message"></textarea>
+                    <button class="send_btn">Send</button>
+                </div>
+            </div>
+            <div class="footer">
+                Let's collaborate!
+            </div>
+            <p>Our team is always available to assist you.</p>
+            <!-- قسم وسائل التواصل الاجتماعي -->
+            <div class="social-section">
+                <h3>Follow us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="white and blue/facebook_White.png" alt="Instagram"></a>
+                    <a href="#"><img src="white and blue/instagram_White.png" alt="TikTok"></a>
+                    <a href="#"><img src="white and blue/linkedin_White.png" alt="Facebook"></a>
+                    <a href="#"><img src="white and blue/tiktok_White.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleInputs() {
+            var inputFields = document.getElementById("inputFields");
+            inputFields.classList.toggle("active");
+            if (inputFields.classList.contains("active")) { // تغيير هنا
+                let mail_btn = document.getElementById("mail_btn").innerHTML="Welcome";
+            }
+        }
+    </script>
+</body>
+</html>
